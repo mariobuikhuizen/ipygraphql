@@ -8,11 +8,11 @@ class Handler(Widget):
     pass
 
 
-class Graphiql(DOMWidget):
+class GraphiQL(DOMWidget):
 
-    _model_name = Unicode('GraphiqlModel').tag(sync=True)
+    _model_name = Unicode('GraphiQLModel').tag(sync=True)
 
-    _view_name = Unicode('GraphiqlView').tag(sync=True)
+    _view_name = Unicode('GraphiQLView').tag(sync=True)
 
     _view_module = Unicode('jupyter-graphql').tag(sync=True)
 
@@ -66,4 +66,4 @@ class FrontendHttpHandler(Handler):
     url = Unicode().tag(sync=True)
 
 
-__all__ = ['Graphiql', 'Handler', 'BackendHandler', 'FrontendHttpHandler']
+__all__ = ['GraphiQL', 'Handler', 'BackendHandler', 'FrontendHttpHandler']

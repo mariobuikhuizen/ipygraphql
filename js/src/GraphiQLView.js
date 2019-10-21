@@ -7,7 +7,7 @@ import { handleRequest } from './FrontendHttpHandlerModel';
 import graphiqlCss from '!!raw-loader!graphiql/graphiql.css';
 import 'graphiql/dist/lint.css';
 
-export class GraphiqlView extends DOMWidgetView {
+export class GraphiQLView extends DOMWidgetView {
     render() {
         super.render();
 

@@ -2,13 +2,13 @@
 import { DOMWidgetModel, unpack_models } from '@jupyter-widgets/base';
 import { version } from './version';
 
-export class GraphiqlModel extends DOMWidgetModel {
+export class GraphiQLModel extends DOMWidgetModel {
     defaults() {
         return {
             ...super.defaults(),
             ...{
-                _model_name: 'GraphiqlModel',
-                _view_name: 'GraphiqlView',
+                _model_name: 'GraphiQLModel',
+                _view_name: 'GraphiQLView',
                 _view_module: 'jupyter-graphql',
                 _model_module: 'jupyter-graphql',
                 _view_module_version: `^${version}`,
@@ -25,7 +25,7 @@ export class GraphiqlModel extends DOMWidgetModel {
     }
 }
 
-GraphiqlModel.serializers = {
+GraphiQLModel.serializers = {
     ...DOMWidgetModel.serializers,
     handler: { deserialize: unpack_models },
 };
