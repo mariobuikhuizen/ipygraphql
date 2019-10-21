@@ -33,7 +33,7 @@ class GraphiQL(DOMWidget):
 
     variables = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    response = Unicode().tag(sync=True)
+    response = Dict(default_value=None, allow_none=True).tag(sync=True)
 
 
 class BackendHandler(Handler):

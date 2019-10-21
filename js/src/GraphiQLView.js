@@ -86,7 +86,7 @@ class StateWrapper extends React.Component {
 
             return fetcherImpl(graphQLParams).then((json) => {
                 if (userExecuted) {
-                    model.set('response', JSON.stringify(json));
+                    model.set('response', json);
                     model.save_changes(model.callbacks(view));
                 }
                 return json;
@@ -98,12 +98,13 @@ class StateWrapper extends React.Component {
         const { model } = this.props;
 
         const variables = model.get('variables');
+        const response = model.get('response');
 
         return React.createElement(GraphiQL, {
             fetcher: this.fetcherWrapper,
             query: model.get('query'),
             variables: variables ? JSON.stringify(variables) : '',
-            response: model.get('response'),
+            response: response ? JSON.stringify(response, null, 2) : '',
             onEditQuery: this.onEditQuery,
         });
     }
