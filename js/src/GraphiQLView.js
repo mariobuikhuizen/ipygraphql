@@ -6,6 +6,7 @@ import { handleRequest } from './FrontendHttpHandlerModel';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import graphiqlCss from '!!raw-loader!graphiql/graphiql.css';
 import 'graphiql/dist/lint.css';
+import 'graphiql/dist/info.css';
 
 export class GraphiQLView extends DOMWidgetView {
     render() {
