@@ -19,7 +19,7 @@ export class GraphiqlModel extends DOMWidgetModel {
                 handler: null,
                 query: null,
                 variables: null,
-                result: null,
+                response: null,
             },
         };
     }

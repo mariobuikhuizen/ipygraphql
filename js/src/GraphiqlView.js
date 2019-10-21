@@ -86,7 +86,7 @@ class StateWrapper extends React.Component {
 
             return fetcherImpl(graphQLParams).then((json) => {
                 if (userExecuted) {
-                    model.set('result', JSON.stringify(json));
+                    model.set('response', JSON.stringify(json));
                     model.save_changes(model.callbacks(view));
                 }
                 return json;
@@ -103,7 +103,7 @@ class StateWrapper extends React.Component {
             fetcher: this.fetcherWrapper,
             query: model.get('query'),
             variables: variables ? JSON.stringify(variables) : '',
-            response: model.get('result'),
+            response: model.get('response'),
             onEditQuery: this.onEditQuery,
         });
     }
