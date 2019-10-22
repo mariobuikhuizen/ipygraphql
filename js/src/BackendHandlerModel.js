@@ -41,7 +41,10 @@ export class BackendHandlerModel extends WidgetModel {
 
         return new Promise((resolve, reject) => {
             this.resolve = resolve;
-            setTimeout(() => reject(new Error('timeout')), this.get('timeout'));
+            setTimeout(() => {
+                this.resolve = undefined;
+                reject(new Error('timeout'))
+            }, this.get('timeout'));
         });
     }
 }
