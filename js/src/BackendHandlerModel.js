@@ -23,7 +23,7 @@ export class BackendHandlerModel extends WidgetModel {
         if (!this.onChangeSet) {
             this.onChangeSet = true;
             this.on('change:response', () => {
-                if (this.resolve) {
+                if (this.resolve && this.get('response')) {
                     this.resolve(this.get('response'));
                     this.resolve = undefined;
                 }

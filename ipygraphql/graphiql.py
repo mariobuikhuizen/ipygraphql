@@ -1,4 +1,4 @@
-from traitlets import Unicode, Int, Instance, Dict
+from traitlets import Unicode, Int, Instance, Dict, observe
 from ipywidgets import Widget, DOMWidget
 from ipywidgets.widgets.widget import widget_serialization
 from ._version import semver
@@ -46,11 +46,25 @@ class BackendHandler(Handler):
 
     _model_module_version = Unicode(semver).tag(sync=True)
 
-    request = Dict().tag(sync=True)
+    request = Dict(default_value=None, allow_none=True).tag(sync=True)
 
-    response = Dict().tag(sync=True)
+    response = Dict(default_value=None, allow_none=True).tag(sync=True)
 
     timeout = Int(10000).tag(sync=True)
+
+    @observe('request')
+    def _handle_request(self, change):
+        if not change['new']:
+            return
+
+        self.response = None
+        result = self.handle(change['new'])
+
+        self.request = None
+        self.response = result
+
+    def handle(self, request):
+        pass
 
 
 class FrontendHttpHandler(Handler):
