@@ -1,6 +1,7 @@
 [![Version](https://img.shields.io/npm/v/jupyter-graphql.svg)](https://www.npmjs.com/package/jupyter-graphql)
 [![Version](https://img.shields.io/pypi/v/ipygraphql.svg)](https://pypi.python.org/mariobuikhuizen/ipygraphql)
 [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ipygraphql.svg)](https://anaconda.org/conda-forge/ipygraphql)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/mariobuikhuizen/ipygraphql/master?filepath=example.ipynb)
 
 ipygraphql
 ======
