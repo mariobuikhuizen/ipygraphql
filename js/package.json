@@ -1,6 +1,6 @@
 {
   "name": "jupyter-graphql",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Graphql widgets for Jupyter",
   "license": "MIT",
   "author": "Mario Buikhuizen, Maarten Breddels",
