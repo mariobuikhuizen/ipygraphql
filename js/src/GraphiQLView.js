@@ -72,12 +72,8 @@ class StateWrapper extends React.Component {
         const { fetcherImpl, model, view } = props;
         model.on('change', () => this.forceUpdate());
 
-        let localQuery = model.get('query');
-        model.on('change:query', () => { localQuery = model.get('query'); });
-        this.onEditQuery = (query) => { localQuery = query; };
-
         this.fetcherWrapper = (graphQLParams) => {
-            const userExecuted = localQuery === graphQLParams.query;
+            const userExecuted = graphQLParams.operationName !== 'IntrospectionQuery';
 
             if (userExecuted) {
                 model.set('query', graphQLParams.query);
@@ -106,7 +102,6 @@ class StateWrapper extends React.Component {
             query: model.get('query'),
             variables: variables ? JSON.stringify(variables) : '',
             response: response ? JSON.stringify(response, null, 2) : '',
-            onEditQuery: this.onEditQuery,
         });
     }
 }
