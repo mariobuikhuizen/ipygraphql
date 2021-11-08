@@ -53,7 +53,7 @@
   "dependencies": {
     "@jupyter-widgets/base": "^1.0.0 || ^2.0.0",
     "core-js": "^3.0.1",
-    "graphiql": "^0.15.1",
+    "graphiql": "^1.4.7",
     "graphql": "^14.5.8",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.8.0",
